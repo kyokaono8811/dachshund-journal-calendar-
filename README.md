@@ -125,7 +125,7 @@ Track your emotional journey with beautiful visualizations:
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Pixel Art](https://img.shields.io/badge/Pixel_Art-Pixsquare-FF69B4?style=for-the-badge)
+![Pixel Art](https://img.shields.io/badge/Pixel_Art-Pixquare-FF69B4?style=for-the-badge)
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express
