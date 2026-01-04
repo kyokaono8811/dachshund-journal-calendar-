@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Makes the page scale properly on phones and tablets -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Dachshund Calendar</title>
+        <!-- CSS HERE -->
+        <link rel="stylesheet" href="journal.css">
+        <!-- Adds a small icon in the browser web -->
+        <link rel="icon" type="image/x-icon" href="../icon.png"> 
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <!-- ADD CHART.JS LIBRARY HERE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    </head>
+
+    <body>
+        
+        <!-- START SCREEN -->
+        <div id="startScreen">
+            <h1 id="appTitle">Dachshund Calendar</h1>
+            <p id="appSubtitle">Daily Gratitude Journal</p>
+            <button id="startButton">Start</button>
+        </div>
+
+        <!-- MAIN APP (hidden initially, becomes visible after clicking start) -->
+        <div id="mainApp" style="display: none;">
+
+            <!--HAMBURGER MENU-->
+            <div id="hamburger">&#9776;</div>
+        
+            <!--SIDE MENU-->
+            <div id="sideMenu">
+                <button class="sideBtn" id="calendarMenu">Calendar</button>
+                <button class="sideBtn" id="listMenu">Journal List</button>
+                <button class="sideBtn" id="insightsMenu">Weekly Tracker</button>
+            </div>
+        
+            <!-- CALENDAR PAGE -->
+            <div id="calendarPage">
+                <!-- TITLE AND SUBTITLE -->
+                <div id="monthNav">
+                    <button id="prevMonth">
+                        <img src="left_arrow_morning.png" alt="Previous" class="arrow-img morning-arrow">
+                        <img src="left_arrow_day.png" alt="Previous" class="arrow-img day-arrow">
+                        <img src="left_arrow_night.png" alt="Previous" class="arrow-img night-arrow">
+                    </button>
+
+                    <div id="monthYear">
+                        <h1 id="title"></h1>
+                        <h2 id="year"></h2>
+                    </div>
+                  
+                    <button id="nextMonth">
+                        <img src="right_arrow_morning.png" alt="Next" class="arrow-img morning-arrow">
+                        <img src="right_arrow_day.png" alt="Next" class="arrow-img day-arrow">
+                        <img src="right_arrow_night.png" alt="Next" class="arrow-img night-arrow">
+                    </button>
+                </div>
+                
+                <h2 id="subtitle">Daily Journal</h2>
+        
+                <!-- CALENDAR AREA -->
+                <div id="calendarContainer">
+                    <div id="calendarDiv">
+                        <div id="calendarHeading">
+                            <p id="totalDays">0/31</p>
+                        </div>
+                        <div id="calendarContent">
+                            <div id="tracker">
+                                <div class="days">
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                </div>
+                                <div class="days">
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                </div>
+                                <div class="days">
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                </div>
+                                <div class="days">
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                </div>
+                                <div class="days">
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                    <div class="day">1</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DACHSHUND CONTAINER - Only on calendar page -->
+                <div id="dachshundContainer">
+                    <img id="dachshund1" class="dachshund" src="dachshund1_frame1.png" alt="Walking Dachshund 1">
+                    <img id="dachshund2" class="dachshund" src="dachshund2_frame1.png" alt="Walking Dachshund 2">
+                    <img id="dachshund3" class="dachshund" src="dachshund3_frame1.png" alt="Walking Dachshund 3">
+                </div>
+            </div>
+        
+            <!-- JOURNAL LIST PAGE (initially hidden) -->
+            <div id="listPage" style="display: none;">
+                <h1>Journal List</h1>
+                <div id="journalList"></div>
+            </div>
+
+            <audio id="trashSound" src="trash.mp3" preload="auto"></audio>
+            <audio id="barkSound" src="bark.mp3" preload="auto"></audio>
+
+
+            <!-- AI INSIGHTS PAGE (initially hidden) - ADD THIS SECTION -->
+            <div id="insightsPage" style="display: none;">
+                <h1>Weekly Emotion Tracker</h1>
+                
+                <div id="insightsContainer">
+
+                    <!-- TOP ROW: holds TWO cards -->
+                    <div class="top-row">
+                
+                        <!-- Card 1 -->
+                        <div class="insight-card">
+                            <h2>Weekly Emotion Summary</h2>
+                            <div id="weeklyEmotionDisplay">
+                                <div class="summary-text">
+                                    <div id="dominantEmotion">Analyzing...</div>
+                                    <p id="emotionDescription"></p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 2 -->
+                        <div class="insight-card">
+                            <h2>Emotion Timeline</h2>
+                            <canvas id="sentimentChart"></canvas>
+                        </div>
+                
+                    </div>
+                
+                    <!-- BOTTOM ROW: holds ONE card -->
+                    <div class="bottom-row">
+                
+                        <!-- Card 3 -->
+                        <div class="insight-card">
+                            <h2>Emotion Chart</h2>
+                            <canvas id="emotionPieChart"></canvas>
+                        </div>
+                
+                    </div>
+                
+                </div>
+        </div>
+
+        <audio id="clickSound" src="buttonclick.mp3" preload="auto"></audio>
+
+        <!-- JOURNAL MODAL -->
+        <div id="journalModal" class="modal" style="display:none;">
+            <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Journal Entry</h2>
+            <form id="journalForm">
+                <label>1. How are you feeling today?</label><br>
+                <input type="text" id="journalFeeling" name="feeling" required><br><br>
+  
+                <label>2. What are the three things you are thankful for?</label><br>
+                <textarea id="journalThankful" name="thankful" rows="3" required></textarea><br><br>
+  
+                <label>3. What is a goal for your future self?</label><br>
+                <input type="text" id="journalGoal" name="goal" required><br><br>
+  
+                <button type="button" id="saveJournalBtn">Save Entry</button>
+            </form>
+            </div>
+        </div>
+  
+        
+          <script src="journal.js"></script>         
+    </body>
+</html>
