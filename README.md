@@ -167,6 +167,12 @@ Calendar_Project/
 - Install the "Live Server" extension in VS Code
 - Or use Python: `python3 -m http.server 8000` in the frontend folder
 
+## Inspiration & Acknowledgment
+
+This project was initially inspired by a habit tracker tutorial by **[Cozy Olive Studios](https://youtu.be/-OcVVgDLI3U?si=3G7QeJLt8zJiZipy | https://youtu.be/-OcVVgDLI3U?si=6CjSyhF64wiZtEDN)**, which I used as a learning reference for basic structure and workflow.
+
+Since then, the project has been significantly expanded and redesigned. Additional features, system architecture, UI/UX decisions, backend logic, data handling, and AI-powered functionality were independently designed and implemented by me. The final application goes well beyond the original reference and reflects my own ideas, problem-solving approach, and technical decisions.
+
 ## Contributing
 
 Feel free to fork and submit pull requests!
