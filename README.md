@@ -42,18 +42,17 @@ Write your daily reflections with three guided prompts:
 - Organized by year and month
 - Expandable/collapsible sections
 - Edit or delete existing entries
-- Beautiful card-based layout
 
 ![Journal List](screenshots/journal-list.png)
 
 ### AI-Powered Sentiment Analysis
-- Uses HuggingFace's DistilBERT model to analyze your entries
+- Uses HuggingFace's RoBERTa model to analyze your entries
 - Automatically detects emotional tone (Positive/Negative/Neutral)
-- Falls back to keyword analysis if AI is unavailable
+- Falls back to keyword analysis if RoBERTa from Huggingface is unavailable
 
 ### Weekly Emotional Insights
-Track your emotional journey with beautiful visualizations:
-- **Emotion Summary**: Overall weekly mood snapshot with pixel art emoji
+Track your emotional journey with visualizations:
+- **Emotion Summary**: Overall weekly mood snapshot with pixel art drawings
 - **Timeline Chart**: Animated day-by-day sentiment tracking
 - **Pie Chart**: Distribution of emotions throughout the week
 
@@ -76,8 +75,8 @@ Track your emotional journey with beautiful visualizations:
 
 1. **Clone the repository:**
 ```bash
-   git clone https://github.com/yourusername/gratitude-journal.git
-   cd Calendar_Project
+   git clone https://github.com/yourusername/dachshund-journal-calendar-.git
+   cd dachshund-journal-calendar-
 ```
 
 2. **Install backend dependencies:**
@@ -129,7 +128,7 @@ Track your emotional journey with beautiful visualizations:
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express
-- **AI**: HuggingFace Inference API (DistilBERT)
+- **AI**: HuggingFace Inference API (RoBERTa)
 - **Storage**: localStorage (client-side)
 
 ## Project Structure
@@ -161,7 +160,7 @@ Calendar_Project/
 - Check that your `.env` file has a valid HuggingFace token
 - Verify the backend server is running
 - Check browser console for errors
-- The app will fall back to keyword analysis if BERT is unavailable
+- The app will fall back to keyword analysis if RoBERTa is unavailable
 
 **Live Server not working:**
 - Install the "Live Server" extension in VS Code
@@ -172,10 +171,6 @@ Calendar_Project/
 This project was initially inspired by a habit tracker tutorial by **[Cozy Olive Studios](https://youtu.be/-OcVVgDLI3U?si=3G7QeJLt8zJiZipy | https://youtu.be/-OcVVgDLI3U?si=6CjSyhF64wiZtEDN)**, which I used as a learning reference for basic structure and workflow.
 
 Since then, the project has been significantly expanded and redesigned. Additional features, system architecture, UI/UX decisions, backend logic, data handling, and AI-powered functionality were independently designed and implemented by me. The final application goes well beyond the original reference and reflects my own ideas, problem-solving approach, and technical decisions.
-
-## Contributing
-
-Feel free to fork and submit pull requests!
 
 ## License
 
